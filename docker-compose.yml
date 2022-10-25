@@ -1,0 +1,13 @@
+version: '3'
+services:
+    www:
+        image: modostudio/php-apache-hello-world:latest
+        ports: 
+            - 8080:80
+        volumes:
+            - .:/var/www
+            - ./public:/var/www/public
+            - ./logs:/var/www/logs
+        networks:
+            - default
+        restart: always
